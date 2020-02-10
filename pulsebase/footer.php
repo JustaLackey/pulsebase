@@ -2,60 +2,50 @@
 /**
  * The template for displaying the footer
  *
- * Contains the opening of the #site-footer div and all content after.
+ * Contains the closing of the #content div and all content after
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
+ * @package understrap
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+$container = get_theme_mod( 'understrap_container_type' );
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
-				<div class="section-inner">
+<?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-					<div class="footer-credits">
+<div class="wrapper" id="wrapper-footer">
 
-						<p class="footer-copyright">&copy;
-							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://secure.php.net/date */
-								_x( 'Y', 'copyright date format', 'twentytwenty' )
-							);
-							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+	<div class="<?php echo esc_attr( $container ); ?>">
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
+		<div class="row">
 
-					</div><!-- .footer-credits -->
+			<div class="col-md-12">
 
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
+				<footer class="site-footer" id="colophon">
 
-				</div><!-- .section-inner -->
+					<div class="site-info">
 
-			</footer><!-- #site-footer -->
+						<?php understrap_site_info(); ?>
 
-		<?php wp_footer(); ?>
+					</div><!-- .site-info -->
 
-	</body>
+				</footer><!-- #colophon -->
+
+			</div><!--col end -->
+
+		</div><!-- row end -->
+
+	</div><!-- container end -->
+
+</div><!-- wrapper end -->
+
+</div><!-- #page we need this extra closing tag here -->
+
+<?php wp_footer(); ?>
+
+</body>
+
 </html>
+
