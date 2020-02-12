@@ -1,83 +1,61 @@
-<?php
-/**
- * The header for our theme
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package understrap
- */
+<!doctype html>
 
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 
-$container = get_theme_mod( 'understrap_container_type' );
-?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
-</head>
+    <head>
+        <meta charset="utf-8">
 
-<body <?php body_class(); ?> <?php understrap_body_attributes(); ?>>
-<?php do_action( 'wp_body_open' ); ?>
-<div class="site" id="page">
+        <?php // force Internet Explorer to use the latest rendering engine available ?>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<!-- ******************* The Navbar Area ******************* -->
-	<div id="wrapper-navbar">
+        <title><?php wp_title(''); ?></title>
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
+        <?php // mobile meta (hooray!) ?>
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-primary" aria-labelledby="main-nav-label">
+        <?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
+        <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-touch-icon.png">
+        <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+        <!--[if IE]>
+<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+<![endif]-->
+        <?php // or, set /favicon.ico for IE10 win ?>
+        <meta name="msapplication-TileColor" content="#b2b2b2">
+        <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
+        <meta name="theme-color" content="#abc2c8">
 
-			<h2 id="main-nav-label" class="sr-only">
-				<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
-			</h2>
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php if ( 'container' === $container ) : ?>
-			<div class="container">
-		<?php endif; ?>
+        <?php // wordpress head functions ?>
+        <?php wp_head(); ?>
+        <?php // end of wordpress head ?>
 
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
+        <?php // drop Google Analytics Here ?>
+        <?php // end analytics ?>
+        <script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/library/js/slick.min.js'></script>
+        <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/library/js/isotope.pkgd.min.js'></script>
+        <script type="text/javascript" src="<?php bloginfo(template_directory) ?>/library/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php bloginfo(template_directory) ?>/library/js/lity.js"></script>
+        <link rel="stylesheet" href="<?php bloginfo(template_directory) ?>/library/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php bloginfo(template_directory) ?>/library/css/lity-2.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/css/slick.css"/>
 
-						<?php if ( is_front_page() && is_home() ) : ?>
+        <!-- Open Graph data -->
+        <!--
+        <meta property="og:title" content="A&M CAPITAL" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="<?php echo site_url(); ?>" />
+        <meta property="og:image" content="<?php echo site_url(); ?>/wp-content/uploads/2018/10/amcp_header-e1540497569493.png" />
+        <meta property="og:description" content="Description Here" />
+        <meta property="og:site_name" content="A&M Capital" />
+    -->
+    </head>
 
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-
-						<?php endif; ?>
-
-					<?php } else {
-						the_custom_logo();
-					} ?><!-- end custom logo -->
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav ml-auto',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-			<?php if ( 'container' === $container ) : ?>
-			</div><!-- .container -->
-			<?php endif; ?>
-
-		</nav><!-- .site-navigation -->
-
-	</div><!-- #wrapper-navbar end -->
+    <body itemscope itemtype="http://schema.org/WebPage">
