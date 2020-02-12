@@ -40,10 +40,10 @@
         <script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
         <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/library/js/slick.min.js'></script>
         <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/library/js/isotope.pkgd.min.js'></script>
-        <script type="text/javascript" src="<?php bloginfo(template_directory) ?>/library/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="<?php bloginfo(template_directory) ?>/library/js/lity.js"></script>
-        <link rel="stylesheet" href="<?php bloginfo(template_directory) ?>/library/css/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php bloginfo(template_directory) ?>/library/css/lity-2.css">
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/lity.js"></script>
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/lity-2.css">
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/css/slick.css"/>
 
