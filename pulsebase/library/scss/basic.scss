@@ -1,0 +1,148 @@
+// GENERAL
+*{
+    transition: all .6s ease, width 0s;
+}
+
+body{
+    background-color:$bg-color;
+    font-size:$normal-text;
+}
+body, p, h1, h2, h3, h4, h5, a, span, button,ul,li, strong, small, label, input, select, textarea, button, option{
+    color:$main-color;
+    font-family:$font-family;
+    line-height:1.5em;
+}
+input,select,textarea{
+    @extend %box-shadow;
+    border:none;
+    margin-bottom:15px;
+    font-size:$normal-text;
+    line-height:1.1em;
+    padding:10px;
+    max-width:100%;
+    &::placeholder{
+        color:$grey;
+        opacity:1;
+    }
+}
+a{
+    text-decoration:none;
+    line-height:1;
+    outline: none;
+    border: 0;
+    font-size:$lesser-text;
+    cursor:pointer;
+    &:visited, &:focus, &:focus-within, &:visisted:focus, &:visited:hover{
+        color:$black;
+    }
+    &:hover{
+        color:$black;
+        text-decoration:none;
+    }
+}
+img{
+    max-width:100%;
+} 
+
+// DEFAULT FONTS
+h1{
+    font-size:$header-text;
+    font-weight:700;
+    text-transform:uppercase;
+    &.mega{
+        font-size:$mega-text;
+    }
+}
+h2{
+    font-size:$large-text;
+    font-weight: 700;
+    text-transform:uppercase;
+}
+h3{
+    font-size:$med-text;
+    font-weight: 700;
+    text-transform:uppercase;
+}
+h4{
+    font-weight: 700;
+    text-transform:uppercase;
+}
+h5{
+
+}
+h6{
+
+}
+p, label{
+    font-size:$normal-text;
+    hyphens:none;
+    margin:0 0 15px 0;
+    font-weight:400;
+    /*
+    &:last-child{
+        margin-bottom:0;
+    }
+    */
+}
+i{
+    font-family:FontAwesome;
+    transition:none;
+    min-width:15px;
+    text-align:center;
+}
+.slick-track{
+    transition:none;
+}
+
+//CLASS ADDONS
+.full-bg{
+    @extend %full-bg;
+}
+.clearline{
+    display:inline-block;
+    float:left;
+    width:100%;
+}
+.bold{
+    font-weight:700;
+}
+.light{
+    font-weight:100;
+}
+.no-border{
+    border: none !important;
+}
+.mobile-only, .tiny-only{
+    display:none !important;
+}
+.flex-ctn{
+    display:flex;
+}
+.flex-right{
+    justify-content:flex-end;
+}
+.relative{
+    position:relative;
+}
+.indent{
+    display:inline-block;
+    margin-left:20px;
+}
+.lesser{
+    font-size:$lesser-text;
+}
+.normal{
+    font-size:$normal-text;
+}
+.bold{
+    font-weight:700;
+}
+.capital{
+    text-transform:uppercase;
+}
+.spaced{
+    letter-spacing:3px;
+}
+.m-bottom{
+    margin-bottom:15px;
+}

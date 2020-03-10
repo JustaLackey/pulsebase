@@ -1,0 +1,99 @@
+/* General variables */
+
+//breakpoints - compatible with bootstrap
+//bootstrap actually prefers values to be slightly less than the breakpoint when using max-width instead of min-width
+$break-xxl: 1599.98px;
+$break-xl: 1199.98px;
+$break-lg: 991.98px;
+$break-md: 767.98px;
+$break-sm: 575.98px;
+$break-xs: 479.98px;
+//colors
+$bg-color:#fff;
+$black:#000;
+$main-color:#012A49;
+$white:#fff;
+$amblue:#012A49;
+$grey:#B9B9B9;
+//font stuff
+$font-family: 'Oswald', Arial, sans-serif;
+$small-text:10px;
+$sl-text:12px;
+$lesser-text:14px;
+$normal-text: 20px;
+$med-text:25px;
+$large-text:30px;
+$header-text:35px;
+$mega-text:70px;
+//spacing
+$block-padding: 70px 0;
+$vert-pad-xl: 90px;
+$vert-pad-lg: 70px;
+
+@mixin vert-pad($num) {
+    padding-top:$num;
+    padding-bottom:$num;
+}
+@mixin horz-pad($num){
+    padding-left:$num;
+    padding-right:$num;
+}
+
+/* general CSS blocks */
+
+%absolute-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+%absolute-centerX{
+    position:absolute;
+    left:50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+%absolute-centerY{
+    position:absolute;
+    top:50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+%absolute-cancel{
+    top:initial;
+    bottom:initial;
+    left:initial; 
+    right:initial;
+    position:relative;
+}
+%full-bg{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+}
+%text-box{
+
+}
+%box-shadow{
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+}
+%thumbnail-img{
+
+}
+%cta-btn{
+    display:inline-block;
+    cursor:pointer;
+    line-height:1;
+    background:$amblue;
+    color:$white;
+    text-transform:uppercase;
+    padding:10px 25px;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    &:hover,&:active,&:focus{
+        color:$amblue;
+        background:$white;
+    }
+}
