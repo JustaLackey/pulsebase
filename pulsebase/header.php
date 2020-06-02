@@ -59,3 +59,63 @@
     </head>
 
     <body itemscope itemtype="http://schema.org/WebPage">
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="grid grid-header">
+                        <div id="open-btn" class="header-item menu-btn">
+                            <div class="menu-brgr">
+                                <div class="line line1">
+                                </div>
+                                <div class="line line2">
+                                </div>
+                                <div class="line line3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header-item logo">
+                            <a href="<?php echo site_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" /></a>
+                        </div>
+                        <div class="header-item title">
+                            <img src="<?php echo get_template_directory_uri(); ?>/library/images/site-title.png" />
+                        </div>
+                        <div class="header-item search">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="primary-menu-ctn">
+        <div class="primary-menu-body">
+            <div class="primary-menu-head">
+                <div id="close-btn" class="menu-btn">
+                    <div class="menu-brgr">
+                        <div class="line line1">
+                        </div>
+                        <div class="line line2">
+                        </div>
+                    </div>
+                </div>
+                <div class="logo">
+                    <a href="<?php echo site_url() ?>"><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo-white.png" /></a>
+                </div>
+            </div>
+            <div class="primary-menu-list">
+        <?php wp_nav_menu(array(
+        'container' => false,                           // remove nav container
+        'menu' => __( 'Primary Menu', 'primer' ),  // nav name
+        'theme_location' => 'primary',                 // where it's located in the theme
+        'before' => '',                                 // before the menu
+        'after' => '',                                  // after the menu
+        'link_before' => '',                            // before each link
+        'link_after' => '',                             // after each link
+        'depth' => 0,                                   // limit the depth of the nav
+        'fallback_cb' => ''                             // fallback function (if there is one)
+        )); ?>
+            </div>
+        </div>
+    </div>
